@@ -14,6 +14,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.view.WindowCompat
 import com.example.android_studio_retrofit_starwars_api.ui.theme.AndroidStudioRetrofitStarwarsApiTheme
 import com.example.retrofitapp.view.MainView
 import com.example.retrofitapp.viewmodel.APIViewModel
@@ -23,6 +24,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val myViewModel by viewModels<APIViewModel>()
+
+        // Hide status bar
+        WindowCompat.setDecorFitsSystemWindows(window, false)
 
         enableEdgeToEdge()
         setContent {
