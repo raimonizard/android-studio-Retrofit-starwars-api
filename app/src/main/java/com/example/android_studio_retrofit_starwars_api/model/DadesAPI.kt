@@ -4,5 +4,5 @@ data class DadesAPI(
     val count: Int,
     val next: String,
     val previous: Any,
-    val characters: List<CharacterStarwars>
+    val results: List<CharacterStarwars>
 )

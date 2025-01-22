@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
@@ -22,6 +23,7 @@ fun MainView(myAPIViewModel: APIViewModel) {
     myAPIViewModel.getCharacters()
 
     if (showLoading) {
+        // Mentre carrega les dades de la API Rest, ens mostra un disc de progrés
         Row(
             modifier = Modifier.fillMaxSize(),
             verticalAlignment = Alignment.CenterVertically,
@@ -33,17 +35,17 @@ fun MainView(myAPIViewModel: APIViewModel) {
         }
     } else {
         LazyColumn {
-            for (i in 0..characters.characters.size){
+            /*
+            item(){
+                // TEST: Per comprovar què hem recuperat de la API REST
+                Text(text="$characters")
+            }*/
+
+            for (i in 0..characters.results.size - 1){
                 item(){
-                    CharacterItem(characters.characters.get(i))
+                    CharacterItem(characters.results.get(i))
                 }
             }
-
-            /*
-            items(characters.characters) {
-                character -> CharacterItem(character = character)
-            }
-            */
         }
     }
 }
