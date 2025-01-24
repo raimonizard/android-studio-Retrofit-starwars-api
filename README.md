@@ -43,7 +43,7 @@ It is necessary to add Internet access permissions in [AndroidManifest.xml](app/
 ```
 
 # Screenshot
-<img src="app/src/main/res/drawable/" alt="App activity" width="300"/>
+<img src="screenshot1.png" alt="App activity" width="300"/>
 
 ---
 # References
